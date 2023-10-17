@@ -1,3 +1,5 @@
-abstract class MovieRepository {
-  Future<List<MovieRepository>> getNowPlaying({int page = 1});
+import 'package:os_recomienda/domain/entities/movie.dart';
+
+abstract class MoviesRepository {
+  Future<List<Movie>> getNowPlaying({int page = 1});
 }
