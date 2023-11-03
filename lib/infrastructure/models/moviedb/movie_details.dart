@@ -127,13 +127,13 @@ class MovieDetails {
 class BelongsToCollection {
   final int id;
   final String name;
-  final String posterPath;
+  final String? posterPath;
   final String backdropPath;
 
   BelongsToCollection({
     required this.id,
     required this.name,
-    required this.posterPath,
+    this.posterPath,
     required this.backdropPath,
   });
 
@@ -141,8 +141,8 @@ class BelongsToCollection {
       BelongsToCollection(
         id: json["id"],
         name: json["name"],
-        posterPath: json["poster_path"],
-        backdropPath: json["backdrop_path"],
+        posterPath: json["poster_path"].toString(),
+        backdropPath: json["backdrop_path"].toString(),
       );
 
   Map<String, dynamic> toJson() => {

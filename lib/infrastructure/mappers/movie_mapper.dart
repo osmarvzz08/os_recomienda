@@ -15,9 +15,10 @@ class MovieMapper {
       overview: moviedb.overview,
       popularity: moviedb.popularity,
       posterPath: (moviedb.posterPath != '')
-          ? 'https://image.tmdb.org/t/p/w500/${moviedb.backdropPath}'
-          : 'no-porter',
-      releaseDate: moviedb.releaseDate,
+          ? 'https://image.tmdb.org/t/p/w500/${moviedb.posterPath}'
+          : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR9nYpUUiZPsigy79LSp52gnjGJ4Gd2TLApbT761cJI37xjDiMVCOwct7n_TqB0EOxFAI&usqp=CAU',
+      releaseDate:
+          moviedb.releaseDate != null ? moviedb.releaseDate! : DateTime.now(),
       title: moviedb.title,
       video: moviedb.video,
       voteAverage: moviedb.voteAverage,
@@ -35,7 +36,7 @@ class MovieMapper {
       overview: moviedb.overview,
       popularity: moviedb.popularity,
       posterPath: (moviedb.posterPath != '')
-          ? 'https://image.tmdb.org/t/p/w500/${moviedb.backdropPath}'
+          ? 'https://image.tmdb.org/t/p/w500/${moviedb.posterPath}'
           : 'https://static.displate.com/857x1200/displate/2022-04-15/7422bfe15b3ea7b5933dffd896e9c7f9_46003a1b7353dc7b5a02949bd074432a.jpg',
       releaseDate: moviedb.releaseDate,
       title: moviedb.title,
